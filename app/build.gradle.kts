@@ -44,4 +44,22 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+    implementation ("com.android.volley:volley:1.2.0")
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation ("androidx.browser:browser:1.3.0")
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
+
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+
+
+
+
+
+
+
 }

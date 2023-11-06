@@ -15,10 +15,12 @@ class NewsListAdapter(private val listener : NewsItemClicked): RecyclerView.Adap
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
+
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news,parent,false)
+
         val viewHolder = NewsViewHolder(view)
 
-        //adding listener for handling clicks of items
+
         view.setOnClickListener{
             listener.onItemClicked(items[viewHolder.adapterPosition])
         }
@@ -42,6 +44,7 @@ class NewsListAdapter(private val listener : NewsItemClicked): RecyclerView.Adap
 }
 
 class NewsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+
 
     val titleView : TextView = itemView.findViewById(R.id.item_title)
     val image : ImageView = itemView.findViewById(R.id.image)

@@ -14,7 +14,7 @@
         android:fontFamily="@font/merienda_one"
         android:gravity="center"
         android:inputType="none"
-        android:text="@string/fresh_news"
+        android:text="@string/news_app"
         android:editable="false"
         android:textColor="@color/teal_700"
         android:textColorLink="#FFF"

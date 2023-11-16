@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
     private lateinit var mAdapter: NewsListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
 
@@ -43,12 +44,11 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
     }
 
     private fun fetchData() {
+
         val url = "json data url"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,
-            url,
-            null,
-            Response.Listener {
+            url, null, Response.Listener {
                 val newsJsonArray = it.getJSONArray("articles")
                 val newsArray = ArrayList<News>()
                 for (i in 0 until newsJsonArray.length()) {
@@ -74,8 +74,10 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
 
 
     override fun onItemClicked(item: News) {
+
         val builder = CustomTabsIntent.Builder()
         val customTabsIntent = builder.build()
         customTabsIntent.launchUrl(this, Uri.parse(item.url))
+
     }
 }

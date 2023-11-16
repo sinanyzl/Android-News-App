@@ -14,32 +14,36 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 
-class MainActivity : AppCompatActivity(), NewsItemClicked  {
+class MainActivity : AppCompatActivity(), NewsItemClicked {
+
     private lateinit var mAdapter: NewsListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//
+
         setContentView(R.layout.activity_main)
 
 
         supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM;
+
         supportActionBar?.setCustomView(R.layout.action_bar_layout);
 
 
         var my_recyclerview: RecyclerView = findViewById(R.id.my_recyclerview)
+
         my_recyclerview.layoutManager = LinearLayoutManager(this)
+
 
         fetchData()
         mAdapter = NewsListAdapter(this)
 
-        // linking adapter with recycler view
+
         my_recyclerview.adapter = mAdapter
     }
 
     private fun fetchData() {
-        val url = "Json url"
+        val url = "json data url"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,
             url,
@@ -63,8 +67,11 @@ class MainActivity : AppCompatActivity(), NewsItemClicked  {
 
             }
         )
+
         MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
     }
+
+
 
     override fun onItemClicked(item: News) {
         val builder = CustomTabsIntent.Builder()
